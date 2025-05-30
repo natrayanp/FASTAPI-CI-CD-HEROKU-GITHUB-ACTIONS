@@ -24,7 +24,8 @@ jobs:
       # Runs command(s) using the runners shell and gets context from the github object
       - name: Send greeting
         run: |
-          echo "GITHUB_REF_VALUE: ${{GITHUB_REF}}"
+          echo "Branch_name: $GITHUB_REF"
+          echo "${{github.ref}}"
           echo "Hello ${{ github.event.inputs.name }}" 
           echo "Your favorite city is ${{ github.event.inputs.city }}"
           echo "Is your favorite color blue: ${{ github.event.inputs.fav-color-blue }}"
